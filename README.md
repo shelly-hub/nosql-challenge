@@ -33,3 +33,26 @@ Part 3: Analysis would be in "NOSQL_analysis.ipynb"
 5. Changing data type for longitude and latitude to decimal using ($toDouble)
 6. When re-run the code, insert data into document (this is the case for "Penang Flavours) might get duplicated, hence need to delete duplicated documents using the last code (.delete_many())
 7. When re-run the code, deleted documents (this is "Dover") cannot be retrieved, hence database has to be deleted using (.drop_database()) and re-import database from PART 1 again. 
+
+### Part 1: Database and Jupyter Notebook Set Up in "NOSQL_analysis.ipynb"
+1. Import dependencies, and create variable for collection from database (same as Part 1)
+2. Exploring data by running through analysis using query, and find(). The output using pprint(), and count documents number using (.count_documents())
+3. The output is then converted to pandas Dataframe using pd.DataFrame(), and number of results using len() function. 
+4. Fist analysis: To find establishments that have a hygiene score equal to 20, using $eq
+5. Second analysis: To find establishments in London have a RatingValue greater than or equal to 4, using $regex, and $gte
+6.Third analysis: To find top 5 establishments with a rating value of '5', sorted by lowest hygiene score, nearest to the restaurant "Penang Flavours".
+ - To locate nearby restaurants, need to define the geocoordinates of "Penang Flavours" by using query, and find()
+ - Nearby restaurant search is within the given value degree_search =0.01, add and subtract this to both latitude and longitude to get the area defined within the degree_search
+ - Using $lte and $gte of the geocoordinates defined after degree_search to get a range of geocoordinates near 'Penang Flavours"
+ - Input rating value and both geocoordinates into query, sort by Hygiene score (1 for ascending), and limit results to 5, then pprint the output using for loop
+ 7. Fourth analysis: To create a pipeline aggregate with following conditions:
+ - Matches establishments with a hygiene score of 0, using $match and $eq
+ - Groups the matches by Local Authority, and count number of documents, using $group, specified '-id' for the group field, and count documents using $sum
+ - Sorts the matches from highest to lowest, this is to sort by count of documents using $sort and -1 value for descending order
+ - create variable for the pipiline and input into (.aggregate()),, and print the output
+
+### References
+ - $toDecimal (aggregation).(2023). Retrieved on:21/05/2023, from:<MongoDB.https://www.mongodb.com/docs/manual/reference/operator/aggregation/toDecimal/>
+ - How to use $gte and $lte between date with `$filter`.(14/05/2018). StackOverflow. Retrieved on:22/05/2023, from:<https://stackoverflow.com/questions/50331232/how-to-use-gte-and-lte-between-date-with-filter>
+ - C# Convert.ToDouble loses decimal points when converting string to double.(15/1/2013).StackOverflow. Retrieved on:22/05/2023, from:<https://stackoverflow.com/questions/14343622/c-sharp-convert-todouble-loses-decimal-points-when-converting-string-to-double>
+ -  Module 12: NoSQL Databases(15/5/2023). Monash University Data Analytics Bootcamp. Retrieved on: 22/5/2023
