@@ -56,7 +56,7 @@ Part 3: Analysis would be in "NOSQL_analysis.ipynb"
        - Groups the matches by Local Authority, and count number of documents, 
        using $group, specified '-id' for the group field, and count documents using $sum
        - Sorts the matches from highest to lowest, this is to sort by count of documents using $sort and -1 value for descending order
-       - create variable for the pipiline and input into (.aggregate()),, and print the output
+       - create variable for the pipiline and input into (.aggregate()), and print the output
 
 ### References
  - $toDecimal (aggregation).(2023). Retrieved on:21/05/2023, from:<MongoDB.https://www.mongodb.com/docs/manual/reference/operator/aggregation/toDecimal/>
