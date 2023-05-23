@@ -6,7 +6,7 @@ This project focuses on using noSQL database through MongoDB. The raw data that 
 ## Project Description
 Data given in Json file contains information of food evaluation of various establishments across the United Kingdom. The ratings data provided in the data is used by food critics and journalists for their future work. 
 
-This project would be divided into 3 parts. 
+This project would be divided into 3 parts:
 
 Part 1: Set up and Part 2: Update would be in "NOSQL_setup.ipynb" file.
 
