@@ -58,7 +58,7 @@ Part 3: Analysis would be in "NOSQL_analysis.ipynb"
        - Sorts the matches from highest to lowest, this is to sort by count of documents using $sort and -1 value for descending order
        - create variable for the pipiline and input into (.aggregate()), and print the output
 
-### References
+## References
  - $toDecimal (aggregation).(2023). Retrieved on:21/05/2023, from:<MongoDB.https://www.mongodb.com/docs/manual/reference/operator/aggregation/toDecimal/>
  - How to use $gte and $lte between date with `$filter`.(14/05/2018). StackOverflow. Retrieved on:22/05/2023, from:<https://stackoverflow.com/questions/50331232/how-to-use-gte-and-lte-between-date-with-filter>
  - C# Convert.ToDouble loses decimal points when converting string to double.(15/1/2013).StackOverflow. Retrieved on:22/05/2023, from:<https://stackoverflow.com/questions/14343622/c-sharp-convert-todouble-loses-decimal-points-when-converting-string-to-double>
